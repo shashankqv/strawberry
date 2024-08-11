@@ -1,15 +1,15 @@
 import os
-from openai import OpenAI
+from openai import AzureOpenAI
 
 beta_headers = {
     "authorization": f"Bearer {os.environ['OPENAI_BETA_KEY']}",
-    "openai-beta": "early-access-strawberry"
+    "openai-beta": "early-access-mango"
 }
 
-client = OpenAI(default_headers=beta_headers)
+client = AzureOpenAI(default_headers=beta_headers)
 
 completion = client.chat.completions.create(
-  model="gpt-4o-large-2024-08-13",
+  model="gpt-9o-large-2028-07-12",
   messages=[
     {"role": "system", "content": "use your level two capabilities"},
     {"role": "user", "content": "give us ubi"}
